@@ -1,14 +1,13 @@
-  // Part3-1
+
 function firstfocus() {
 	var userid=document.getElementsByName("userid")[0].focus();
 }
 
-// Part3-2
+
 
 function userid_validation(min , max) {
-	console.log("user id validation is working");
+
 	let length = document.getElementsByName("userid")[0].value.length ;
-	console.log(length);
 	if(length===0)
 		window.alert("User ID should not be empty!");
 	else if(length>max)
@@ -19,22 +18,17 @@ function userid_validation(min , max) {
 		window.alert(`User ID should not less than ${min}!`);
 	else
 	{
-		focusPassid(); //for Part4
+		 
+		movenext(document.getElementsByName("userid")[0]);
+
 	}
 }
 
 
-// Part 4-1
-function focusPassid(argument) {
-	var passid=document.getElementsByName("passid")[0].focus();
 
-}
-
-// Part 4-2
 function passid_validation(min , max){
-	console.log("password validation is working");
+	
 	let length = document.getElementsByName("passid")[0].value.length ;
-	console.log(length);
 	if(length===0)
 		window.alert("Password should not be empty!");
 	else if(length>max)
@@ -45,14 +39,10 @@ function passid_validation(min , max){
 		window.alert(`Password should not less than ${min}!`);
 	else
 	{
-		focusname(); //for Part4
+		movenext(document.getElementsByName("passid")[0]); //for Part4
 	}
 }
 
-function focusname() {
-	var passid=document.getElementsByName("username")[0].focus();
-
-}
 
 
 function allLetter(){
@@ -64,15 +54,11 @@ function allLetter(){
       }  
       else  
       {  
-      	focusEmail()
+      	movenext(document.getElementsByName("username")[0])
       }  
     
 }
 
-function focusEmail() {
-	var email=document.getElementsByName("email")[0].focus();
-
-}
 
 function ValidateEmail() {
 	let email = document.getElementsByName("email")[0].value;
@@ -81,12 +67,11 @@ function ValidateEmail() {
       {  
       	window.alert('Please Enter valid email'); 
       }  
-      else  
-      {  
-      	focusEmail()
-      }  
      
 }
 
+function movenext(child) {	
+	child.parentElement.nextElementSibling.nextElementSibling.querySelectorAll('input')[0].focus();
+}
 
 
