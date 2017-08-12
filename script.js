@@ -8,14 +8,18 @@ function firstfocus() {
 function userid_validation(min , max) {
 
 	let length = document.getElementsByName("userid")[0].value.length ;
-	if(length===0)
-		window.alert("User ID should not be empty!");
+	if(length===0){
+		console.log("User ID should not be empty!");
+		document.getElementsByName("userid")[0].focus();
+	}
 	else if(length>max)
 	{
-		window.alert(`User ID should not more than ${max}!`);
+		console.log(`User ID should not more than ${max}!`);
+		document.getElementsByName("userid")[0].focus();
 	}
-	else if(length<min)
-		window.alert(`User ID should not less than ${min}!`);
+	else if(length<min){
+		console.log(`User ID should not less than ${min}!`);
+		document.getElementsByName("userid")[0].focus();}
 	else
 	{
 		 
@@ -30,13 +34,19 @@ function passid_validation(min , max){
 	
 	let length = document.getElementsByName("passid")[0].value.length ;
 	if(length===0)
-		window.alert("Password should not be empty!");
+	{
+		console.log("Password should not be empty!");
+		document.getElementsByName("passid")[0].focus();
+	}
 	else if(length>max)
 	{
-		window.alert(`Password should not more than ${max}!`);
+		console.log(`Password should not more than ${max}!`);
+		document.getElementsByName("passid")[0].focus()
 	}
-	else if(length<min)
-		window.alert(`Password should not less than ${min}!`);
+	else if(length<min){
+		console.log(`Password should not less than ${min}!`);
+		document.getElementsByName("passid")[0].focus()
+	}
 	else
 	{
 		movenext(document.getElementsByName("passid")[0]); //for Part4
@@ -50,11 +60,12 @@ function allLetter(){
 	var letters = /[^a-zA-Z ]/;  
       if(name.match(letters))  
       {  
-      	window.alert('Please input alphabet characters only'); 
+      	console.log('Please input alphabet characters only');
+      	document.getElementsByName("username")[0].focus(); 
       }  
       else  
       {  
-      	movenext(document.getElementsByName("username")[0])
+      	movenext(document.getElementsByName("username")[0]);
       }  
     
 }
@@ -65,7 +76,8 @@ function ValidateEmail() {
 	var at = /[@]/;  
       if(!email.match(at))  
       {  
-      	window.alert('Please Enter valid email'); 
+      	console.log('Please Enter valid email'); 
+      	document.getElementsByName("email")[0].focus();
       }  
      
 }
