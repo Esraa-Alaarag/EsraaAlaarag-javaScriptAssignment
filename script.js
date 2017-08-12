@@ -57,10 +57,36 @@ function focusname() {
 
 function allLetter(){
 	let name = document.getElementsByName("username")[0].value;
-	for(i=0;i<name.length;i++){
+	var letters = /[^a-zA-Z ]/;  
+      if(name.match(letters))  
+      {  
+      	window.alert('Please input alphabet characters only'); 
+      }  
+      else  
+      {  
+      	focusEmail()
+      }  
+    
+}
 
-	}
+function focusEmail() {
+	var email=document.getElementsByName("email")[0].focus();
 
 }
+
+function ValidateEmail() {
+	let email = document.getElementsByName("email")[0].value;
+	var at = /[@]/;  
+      if(!email.match(at))  
+      {  
+      	window.alert('Please Enter valid email'); 
+      }  
+      else  
+      {  
+      	focusEmail()
+      }  
+     
+}
+
 
 
